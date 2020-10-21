@@ -1,0 +1,89 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "batchAccounts_adfdatamigration_name": {
+            "defaultValue": "adfdatamigration",
+            "type": "string"
+        },
+        "pools_upload_2_dropbox_password": {
+            "defaultValue": "^4Tm0LnZ&U188T",
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Batch/batchAccounts",
+            "apiVersion": "2020-05-01",
+            "name": "[parameters('batchAccounts_adfdatamigration_name')]",
+            "location": "eastus",
+            "identity": {
+                "type": "None"
+            },
+            "properties": {
+                "poolAllocationMode": "BatchService",
+                "publicNetworkAccess": "Enabled",
+                "encryption": {
+                    "keySource": "Microsoft.Batch"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Batch/batchAccounts/pools",
+            "apiVersion": "2020-05-01",
+            "name": "[concat(parameters('batchAccounts_adfdatamigration_name'), '/upload-2-dropbox')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Batch/batchAccounts', parameters('batchAccounts_adfdatamigration_name'))]"
+            ],
+            "properties": {
+                "displayName": "Upload Files To Dropbox",
+                "vmSize": "BASIC_A1",
+                "interNodeCommunication": "Disabled",
+                "maxTasksPerNode": 1,
+                "taskSchedulingPolicy": {
+                    "nodeFillType": "Spread"
+                },
+                "deploymentConfiguration": {
+                    "virtualMachineConfiguration": {
+                        "imageReference": {
+                            "publisher": "microsoft-dsvm",
+                            "offer": "dsvm-win-2019",
+                            "sku": "server-2019",
+                            "version": "latest"
+                        },
+                        "nodeAgentSkuId": "batch.node.windows amd64"
+                    }
+                },
+                "scaleSettings": {
+                    "fixedScale": {
+                        "targetDedicatedNodes": 1,
+                        "targetLowPriorityNodes": 0,
+                        "resizeTimeout": "PT15M"
+                    }
+                },
+                "startTask": {
+                    "commandLine": "pip install dropbox",
+                    "userIdentity": {
+                        "autoUser": {
+                            "scope": "Task",
+                            "elevationLevel": "Admin"
+                        }
+                    },
+                    "maxTaskRetryCount": 2,
+                    "waitForSuccess": true
+                },
+                "userAccounts": [
+                    {
+                        "name": "adfcookbook",
+                        "elevationLevel": "Admin",
+                        "windowsUserConfiguration": {
+                            "loginMode": "Batch"
+                        },
+                        "password": "[parameters('pools_upload_2_dropbox_password')]"
+                    }
+                ]
+            }
+        }
+    ]
+}
