@@ -5,7 +5,7 @@
 
 # Azure Data Factory Cookbook
 
-<a href="https://www.packtpub.com/product/Azure-Data-Factory-Cookbook/9781800565296?utm_source=github&utm_medium=repository&utm_campaign=9781800565296"><img src="https://static.packt-cdn.com/products/9781800565296/cover/smaller" alt="Learn Amazon SageMaker" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/Azure-Data-Factory-Cookbook/9781800565296?utm_source=github&utm_medium=repository&utm_campaign=9781800565296"><img src="https://static.packt-cdn.com/products/9781800565296/cover/smaller" alt="Azure Data Factory Cookbook" height="256px" align="right"></a>
 
 This is the code repository for [Azure Data Factory Cookbook](https://www.packtpub.com/product/Azure-Data-Factory-Cookbook/9781800565296?utm_source=github&utm_medium=repository&utm_campaign=9781800565296), published by Packt.
 
