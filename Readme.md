@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this product for only $5 on PacktPub.com](https://www.packtpub.com/)
------
-*The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Azure Data Factory Cookbook
 
 <a href="https://www.packtpub.com/product/Azure-Data-Factory-Cookbook/9781800565296?utm_source=github&utm_medium=repository&utm_campaign=9781800565296"><img src="https://static.packt-cdn.com/products/9781800565296/cover/smaller" alt="Azure Data Factory Cookbook" height="256px" align="right"></a>
