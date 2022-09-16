@@ -52,9 +52,7 @@
           "type": "blobServices/containers",
           "apiVersion": "2019-06-01",
           "name": "[concat('default/', parameters('blobContainer'))]",
-          "dependsOn": [
-            "[parameters('storageAccountName')]"
-          ]
+          "dependsOn": ["[parameters('storageAccountName')]"]
         }
       ]
     },
@@ -80,7 +78,7 @@
           "properties": {
             "type": "AzureBlobStorage",
             "typeProperties": {
-              "connectionString": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(variables('storageAccountId'), '2019-06-01').keys[0].value)]" 
+              "connectionString": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(variables('storageAccountId'), '2019-06-01').keys[0].value)]"
             }
           }
         },
