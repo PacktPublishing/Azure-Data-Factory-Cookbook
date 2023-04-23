@@ -5,15 +5,11 @@ CREATE TABLE [dbo].[CommonCrawlPartitions](
 )
 INSERT INTO CommonCrawlPartitions (YearAndMonth, Path, UpdatedAt)
 VALUES
-('01-2019', 'cc-index/collections/CC-MAIN-2019-04/indexes', GetDate()),
-('02-2019', 'cc-index/collections/CC-MAIN-2019-09/indexes', GetDate()),
-('03-2019', 'cc-index/collections/CC-MAIN-2019-13/indexes', GetDate()),
-('04-2019', 'cc-index/collections/CC-MAIN-2019-18/indexes', GetDate()),
-('05-2019', 'cc-index/collections/CC-MAIN-2019-22/indexes', GetDate()),
-('06-2019', 'cc-index/collections/CC-MAIN-2019-26/indexes', GetDate()),
-('07-2019', 'cc-index/collections/CC-MAIN-2019-30/indexes', GetDate()),
-('08-2019', 'cc-index/collections/CC-MAIN-2019-35/indexes', GetDate()),
-('09-2019', 'cc-index/collections/CC-MAIN-2019-39/indexes', GetDate()),
-('10-2019', 'cc-index/collections/CC-MAIN-2019-43/indexes', GetDate()),
-('11-2019', 'cc-index/collections/CC-MAIN-2019-47/indexes', GetDate()),
-('12-2019', 'cc-index/collections/CC-MAIN-2019-51/indexes', GetDate());
+('01-2022', 'cc-index/collections/CC-MAIN-2022-05/indexes', GetDate()),
+('05-2022', 'cc-index/collections/CC-MAIN-2022-21/indexes', GetDate()),
+('06-2022', 'cc-index/collections/CC-MAIN-2022-27/indexes', GetDate()),
+('08-2022', 'cc-index/collections/CC-MAIN-2022-33/indexes', GetDate()),
+('09-2022', 'cc-index/collections/CC-MAIN-2022-40/indexes', GetDate()),
+('11-2022', 'cc-index/collections/CC-MAIN-2022-49/indexes', GetDate()),
+('06-2023', 'cc-index/collections/CC-MAIN-2023-06/indexes', GetDate()),
+('03-2023', 'cc-index/collections/CC-MAIN-2023-14/indexes', GetDate());
